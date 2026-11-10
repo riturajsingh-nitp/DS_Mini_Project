@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ParkEase | Parking Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#">
+        <span class="brand-mark">P</span>
+        <span>Park<span class="brand-light">Ease</span></span>
+      </a>
+
+      <div class="side-label">WORKSPACE</div>
+      <nav>
+        <a class="nav-link active" href="#"><span class="nav-icon">▦</span> Overview</a>
+        <a class="nav-link" href="#parking"><span class="nav-icon">▤</span> Parking slots</a>
+        <a class="nav-link" href="#vehicles"><span class="nav-icon">▣</span> Vehicles</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <div class="help-icon">?</div>
+          <strong>Need help?</strong>
+          <p>Check the project guide to understand how the parking system works.</p>
+          <a href="#about">View guide <span>↗</span></a>
+        </div>
+        <div class="profile">
+          <div class="avatar">AD</div>
+          <div><strong>Admin</strong><small>Parking manager</small></div>
+          <span class="more">•••</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">PARKING MANAGEMENT / OVERVIEW</div>
+          <h1>Good morning, Admin <span class="wave">✦</span></h1>
+          <p class="subtitle">Here’s what’s happening in your parking area today.</p>
+        </div>
+        <div class="top-actions">
+          <span class="live-status"><i></i> System operational</span>
+          <button class="icon-button" aria-label="Notifications">♧<b></b></button>
+          <div class="date-chip">10 Nov 2026</div>
+        </div>
+      </header>
+
+      <section class="stats-grid">
+        <article class="stat-card">
+          <div class="stat-top"><span>Total capacity</span><span class="stat-icon blue">▦</span></div>
+          <div class="stat-value">10 <small>slots</small></div>
+          <div class="stat-foot">Fixed parking capacity</div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-top"><span>Occupied slots</span><span class="stat-icon orange">▣</span></div>
+          <div class="stat-value">06 <small>/ 10</small></div>
+          <div class="progress-track"><span style="width:60%"></span></div>
+          <div class="stat-foot">60% occupancy</div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-top"><span>Available slots</span><span class="stat-icon green">✓</span></div>
+          <div class="stat-value">04 <small>slots</small></div>
+          <div class="stat-foot positive">Space available for vehicles</div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-top"><span>Parking status</span><span class="stat-icon violet">⌁</span></div>
+          <div class="status-value"><i></i> Available</div>
+          <div class="stat-foot">Last updated just now</div>
+        </article>
+      </section>
+
+      <section class="content-grid" id="parking">
+        <article class="panel parking-panel">
+          <div class="panel-heading">
+            <div><h2>Parking overview</h2><p>Live visualisation of all parking spaces</p></div>
+            <span class="capacity-tag">10 TOTAL SLOTS</span>
+          </div>
+          <div class="legend">
+            <span><i class="dot available"></i> Available</span>
+            <span><i class="dot occupied"></i> Occupied</span>
+          </div>
+          <div class="slot-grid">
+            <div class="slot occupied-slot"><span>01</span><b>🚗</b><small>BR 01 AB 1234</small></div>
+            <div class="slot occupied-slot"><span>02</span><b>🚙</b><small>JH 01 CD 5678</small></div>
+            <div class="slot free-slot"><span>03</span><b>＋</b><small>AVAILABLE</small></div>
+            <div class="slot occupied-slot"><span>04</span><b>🏍</b><small>BR 01 EF 9012</small></div>
+            <div class="slot free-slot"><span>05</span><b>＋</b><small>AVAILABLE</small></div>
+            <div class="slot occupied-slot"><span>06</span><b>🚗</b><small>JH 05 GH 3456</small></div>
+            <div class="slot free-slot"><span>07</span><b>＋</b><small>AVAILABLE</small></div>
+            <div class="slot occupied-slot"><span>08</span><b>🚙</b><small>BR 02 JK 7890</small></div>
+            <div class="slot free-slot"><span>09</span><b>＋</b><small>AVAILABLE</small></div>
+            <div class="slot occupied-slot"><span>10</span><b>🏍</b><small>JH 01 LM 2468</small></div>
+          </div>
+          <div class="parking-note"><span>✦</span> 4 parking spaces are currently available.</div>
+        </article>
+
+        <article class="panel quick-panel">
+          <div class="panel-heading"><div><h2>Quick actions</h2><p>Manage vehicle entries</p></div></div>
+          <div class="action-card park-action">
+            <div class="action-symbol">＋</div>
+            <div><strong>Park a vehicle</strong><p>Register a new vehicle entry</p></div>
+            <span>→</span>
+          </div>
+          <div class="action-card remove-action">
+            <div class="action-symbol">−</div>
+            <div><strong>Remove a vehicle</strong><p>Mark a vehicle as exited</p></div>
+            <span>→</span>
+          </div>
+          <div class="info-box">
+            <span class="info-symbol">i</span>
+            <div><strong>Data structure used</strong><p>A singly linked list stores vehicle records dynamically. Each node contains a registration number, slot number and pointer to the next vehicle.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel vehicles-panel" id="vehicles">
+        <div class="panel-heading vehicle-heading">
+          <div><h2>Recently parked vehicles</h2><p>Vehicles currently occupying a parking slot</p></div>
+          <a class="view-all" href="#parking">View parking layout ↗</a>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>VEHICLE</th><th>REGISTRATION NUMBER</th><th>SLOT</th><th>STATUS</th></tr></thead>
+            <tbody>
+              <tr><td><span class="vehicle-type">🚗</span> Car</td><td class="reg-number">BR 01 AB 1234</td><td>#01</td><td><span class="pill parked">Parked</span></td></tr>
+              <tr><td><span class="vehicle-type">🚙</span> SUV</td><td class="reg-number">JH 01 CD 5678</td><td>#02</td><td><span class="pill parked">Parked</span></td></tr>
+              <tr><td><span class="vehicle-type">🏍</span> Bike</td><td class="reg-number">BR 01 EF 9012</td><td>#04</td><td><span class="pill parked">Parked</span></td></tr>
+              <tr><td><span class="vehicle-type">🚗</span> Car</td><td class="reg-number">JH 05 GH 3456</td><td>#06</td><td><span class="pill parked">Parked</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer id="about"><span>ParkEase</span> · Data Structures Mini Project <span class="footer-right">Built using C · Singly Linked List</span></footer>
+    </main>
+  </div>
+</body>
+</html>
