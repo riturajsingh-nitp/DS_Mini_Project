@@ -1,6 +1,6 @@
 # Parking Slot Management System
 
-A Data Structures mini project written in C, with a separate HTML/CSS dashboard mockup.
+A backend-focused Data Structures mini project written in C.
 
 ## Data structure used
 **Singly Linked List**
@@ -28,9 +28,6 @@ On Windows:
 gcc parking.c -o parking.exe
 parking.exe
 ```
-
-## Frontend
-Open `index.html` in a browser. The frontend is a static HTML/CSS dashboard prototype. Its sample values are illustrative; it is not connected to the C console program. Connecting the browser UI to the C program would require an additional backend/API layer.
 
 ## Complexity analysis
 Let `n` be the number of parked vehicles.
